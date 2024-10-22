@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos Relacionales</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <img id="imagen" src="IMG/background.jpg" height="350px">
+        <div class="texto">
+            <h1>Introducción a las Bases de Datos Relacionales</h1>
+            <p class ="lead">Un recorrido por el mundo de las base de datos y su impacto en la tecnología.</p>
+        </div>
+    </header>
+    <!-- FIN DEL HEADER -->
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#sql">SQL</a></li>
+            <li><a href="#comparacion">Comparación</a></li>
+            <li><a href="#ejemplos">Ejemplos</a></li>
+            <li><a href="#aplicaciones">Aplicaciones</a></li>
+        </ul>
+    </div>
+    <!-- FIN DEL NAVBAR -->
+
+    <!-- SECCION INICIO -->
+    <div class="temas" id="inicio">
+        <h2>¿Qué es una Base de Datos Relacional?</h2>
+        <p>Una <b>base de datos relacional</b> es un sistema de gestión de datos que permite almacenar, organizar y manipular información de manera eficiente. A diferencia de otros modelos de bases de datos, que pueden ser jerárquicos o en red, el modelo relacional utiliza una estructura tabular que facilita la comprensión y el manejo de los datos.</p>
+        
+        <h3>Estructura de Datos</h3>
+        <p>En una base de datos relacional, la información se organiza en <b>tablas</b> que contienen <b>filas</b> (o tuplas) y <b>columnas</b> (o atributos). Cada fila de una tabla representa un registro único, y cada columna corresponde a un tipo específico de dato. Por ejemplo, en una tabla de clientes, cada fila podría contener información sobre un cliente específico, mientras que las columnas podrían incluir el nombre, la dirección y el número de teléfono.</p>
+        
+        <h3>Relacionamiento de Datos</h3>
+        <p>Una de las características más poderosas de las bases de datos <b>relacionales</b> es su capacidad para establecer relaciones entre diferentes tablas. Esto se logra mediante el uso de <b>claves primarias</b> y <b>claves foráneas</b>. Las claves primarias identifican de manera única cada registro dentro de una tabla, mientras que las claves foráneas permiten que una tabla se vincule a otra. Este enfoque no solo optimiza la organización de la información, sino que también garantiza la integridad y consistencia de los datos, evitando la duplicación y manteniendo la calidad de la información.</p>
+        
+        <h3>Lenguaje de Consulta</h3>
+        <p>Para interactuar con una base de datos relacional, se utiliza el <b>Lenguaje de Consulta Estructurada (SQL)</b>. Este lenguaje permite a los usuarios realizar una amplia gama de operaciones sobre los datos, desde consultas simples que recuperan información específica hasta comandos más complejos que pueden actualizar o eliminar registros. SQL es un estándar de la industria y se ha convertido en la herramienta esencial para la administración de bases de datos relacionales.</p>
+        
+        <h3>Beneficios de Usar Bases de Datos Relacionales</h3>
+        <ul>
+            <li><b>Flexibilidad:</b> Las bases de datos relacionales son flexibles y pueden adaptarse a diversos tipos de aplicaciones, desde pequeñas aplicaciones de escritorio hasta grandes sistemas empresariales.</li>
+            <li><b>Consistencia:</b> Gracias a las restricciones de integridad, las bases de datos relacionales aseguran que los datos sean precisos y coherentes a lo largo del tiempo.</li>
+            <li><b>Facilidad de Acceso:</b> La estructura tabular y el uso de SQL hacen que la información sea fácil de consultar y manipular, lo que permite un acceso rápido a los datos.</li>
+        </ul>
+        <img class="imagen-sec-ini" src="IMG/BDRelacional.png">
+    </div>
+    <!-- FIN DE SECCION INICIO -->
+
+    <!-- SECCION HISTORIA -->
+    <div class="temas" id="historia">
+        <h2>Historia de las Bases de Datos Relacionales</h2>
+        <p>En <b>1970</b>, el matemático y científico informático británico <b>Edgar F. Codd</b>, quien trabajaba en IBM, presentó el <b>modelo relacional</b> en un artículo titulado "<i>A Relational Model of Data for Large Shared Data Banks</i>". Este modelo revolucionó la forma en que los datos se almacenaban y gestionaban hasta ese momento, ofreciendo una estructura más organizada y eficiente para las bases de datos.</p>
+
+        <h3>Antes del Modelo Relacional</h3>
+        <p>Antes de la llegada del modelo relacional, las bases de datos se gestionaban mediante modelos jerárquicos o de red. Estos enfoques organizaban los datos de manera menos flexible, dificultando las relaciones complejas entre conjuntos de datos. Además, estos modelos no permitían una fácil escalabilidad y eran propensos a la redundancia de información.
+            <ul>
+                <li><b>Modelos Jerárquicos:</b> Los datos se estructuraban en una jerarquía, similar a un árbol, donde cada dato tenía un "padre". Si bien era adecuado para ciertos casos de uso, no era adecuado para representar relaciones más complejas.
+                <br><img class="imagen-jerar" src="IMG/jerarquico.png">
+                </li>
+                <li><b>Modelos en Red:</b> Permitían una estructura más flexible, pero su manejo resultaba complicado, ya que las relaciones entre los datos se definían explícitamente a través de enlaces, lo que hacía que las bases de datos fueran difíciles de mantener y escalar.
+                <br><img class="imagen-red" src="IMG/base-de-datos-en-red.png">
+                </li>
+            </ul>
+        
+            <img class="imagen-sec-hist" src="IMG/EdgardCodd.png"> El modelo propuesto por Codd simplificó enormemente el manejo de grandes cantidades de datos. Este modelo trataba los datos como tablas, o relaciones, en las que cada fila representaba un registro único y cada columna un atributo del mismo. La simplicidad y formalidad del enfoque relacional permitió a los sistemas de bases de datos ofrecer una manera más intuitiva y robusta de gestionar grandes volúmenes de datos.
+        
+        <br><br>Edgar Codd estableció principios clave, como el uso de claves primarias y foráneas, para definir las relaciones entre tablas de manera lógica, sin depender de la estructura física de los datos. Su modelo estableció también el concepto de SQL (Structured Query Language) como una forma de interactuar con los datos de manera estandarizada.
+        </p>
+    </div>
+    <!-- FIN DE SECCION HISTORIA -->
+
+    <!-- SECCION COMPONENTES -->
+    <div class="temas" id="componentes">
+        <h2>Componentes de una Base de Datos Relacional</h2>
+
+        <h3>Tablas, Filas y Columnas</h3>
+        
+        <p>Los datos en una base de datos relacional se organizan en <b>tablas</b>, que constan de filas (o tuplas) y <b>columnas</b> (o atributos). Cada fila representa un registro único, mientras que las columnas almacenan los distintos atributos de estos registros. Esto facilita la estructuración y comprensión de los datos, permitiendo que cada tabla agrupe información relacionada, como una tabla de "Clientes" con columnas como "Nombre", "Dirección", "Teléfono".</p>
+
+        <img class="imagen-comp-fkpk" src="IMG/FK&PK.png">
+
+        <h3>Relaciones y Llaves</h3>
+        <p>Las <b>relaciones</b> entre tablas se establecen a través de <b>claves primarias</b> y <b>claves foráneas</b>. La clave primaria identifica de manera única cada fila de una tabla, mientras que la clave foránea permite vincular los datos de una tabla con otra, asegurando la <b>integridad referencial</b>. Este sistema evita la duplicación y asegura que los datos se mantengan consistentes.</p>
+        
+
+        <h3>SQL</h3>
+        <p>El <b>SQL</b> es el lenguaje estándar para gestionar y consultar bases de datos relacionales. Con SQL, se pueden realizar operaciones como la inserción, actualización o eliminación de datos, así como consultas complejas para recuperar información mediante comandos como <b>SELECT</b>, <b>JOIN</b>, <b>GROUP BY</b>.</p>
+    
+    </div>
+    <!-- FIN DE SECCION COMPONENTES -->
+
+    <!-- SECCION SQL -->
+     <div class="temas" id="sql">
+        <h2>Lenguaje SQL</h2>
+        <p><b>SQL</b> (Structured Query Language) es el lenguaje estándar utilizado para gestionar y manipular bases de datos relacionales. Este lenguaje permite realizar desde operaciones simples hasta consultas complejas, lo que lo convierte en una herramienta esencial para cualquier sistema que utilice bases de datos relacionales.</p>
+        <img class="imagen-sql-code" src="IMG/SQLCode.png">
+
+        <h3>¿Qué se puede hacer con SQL?</h3>
+        <p>SQL permite a los usuarios realizar varias operaciones sobre los datos almacenados en una base de datos. Algunas de las operaciones más comunes incluyen:</p>
+        <ul>
+            <li><b>Consultas:</b> Se utiliza el comando <b>SELECT</b> para recuperar información específica de una o más tablas. Las consultas pueden ser simples, como obtener todos los  registros de una tabla, o complejas, involucrando múltiples condiciones, agregaciones y combinaciones de tablas.
+            <pre>
+                <code>SELECT nombre, direccion
+                    FROM Clientes
+                    WHERE ciudad = 'Panama';
+                </code>
+            </pre>
+            </li>
+            <li>
+                <b>Inserción de datos:</b> Mediante el comando <b>INSERT</b>, se pueden agregar nuevos registros a una tabla de manera rápida y precisa.
+                <pre>
+                    <code>INSERT INTO Clientes (nombre, direccion, ciudad)
+                        VALUES ('Juan Pérez', 'Calle 123', 'Panama');
+                    </code>
+                </pre>
+            </li>
+            <li>
+                <b>Actualización de datos:</b> Con el comando <b>UPDATE</b>, los usuarios pueden modificar registros existentes en una tabla.
+                <pre>
+                    <code>UPDATE Clientes
+                        SET direccion = 'Calle 456'
+                        WHERE nombre = 'Juan Pérez';
+                    </code>
+                </pre>
+            </li>
+            <li>
+                <b>Eliminación de datos:</b> Para borrar registros, se utiliza el comando <b>DELETE</b>. Es fundamental usar este comando con precaución, especialmente si se omiten condiciones (<b>WHERE</b>), ya que puede borrar toda la tabla.
+                <pre>
+                    <code>DELETE FROM Clientes
+                        WHERE nombre = 'Juan Pérez';
+                    </code>
+                </pre>
+            </li>
+        </ul>
+        <h3>Características de SQL</h3>
+        <ul>
+            <li><b>Estándar de la Industria:</b> SQL es un lenguaje ampliamente adoptado y estandarizado, utilizado por sistemas de gestión de bases de datos relacionales (RDBMS) como <b>MySQL</b>, <b>PostgreSQL</b>, <b>Oracle</b>, y <b>SQL Server</b>.</li>
+            <li><b>Consultas Complejas:</b> Una de las principales ventajas de SQL es su capacidad para realizar consultas complejas mediante combinaciones de tablas (<b>JOIN</b>), agrupaciones (<b>GROUP BY</b>), y filtros (<b>WHERE</b>), lo que permite extraer información significativa de la base de datos.</li>
+        </ul>
+        <h3>Ejemplo de una consulta más avanzada con JOIN</h3>
+        <pre>
+            <code>SELECT Pedidos.idPedido, Clientes.nombre, Productos.nombreProducto
+                FROM Pedidos
+                JOIN Clientes ON Pedidos.idCliente = Clientes.idCliente
+                JOIN Productos ON Pedidos.idProducto = Productos.idProducto
+                WHERE Clientes.ciudad = 'Panama';
+            </code>
+        </pre>
+     </div>
+    <!-- FIN DE SECCION SQL -->
+
+    <!-- SECCION COMPARACION -->
+     <div class="temas" id="comparacion">
+        <h2>Comparación entre Bases de Datos Relacionales y NoSQL</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Relacional</th>
+                    <th>NoSQL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Estructura</td>
+                    <td>Tablas (Filas y Columnas)</td>
+                    <td>Documentos, Clave-Valor, Grafos</td>
+                </tr>
+                <tr>
+                    <td>Relaciones</td>
+                    <td>Mediante Clave Foráneas</td>
+                    <td>Relaciones Implícitas o Embebidas</td>
+                </tr>
+                <tr>
+                    <td>Escalabilidad</td>
+                    <td>Vertical</td>
+                    <td>Horizontal</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+    <!-- FIN DE SECCION COMPARACION -->
+
+    <!-- SECCION EJEMPLOS -->
+    <div class="temas" id="ejemplos">
+        <h2>Base de Datos Relacionales Populares</h2>
+        <div class="imagenes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>MySQL</th>
+                        <th>PostgreSQL</th>
+                        <th>Oracle Database</th>
+                        <th>SQL Server</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="IMG/MySQLLogo.png"></td>
+                        <td><img src="IMG/PostgreSQLLogo.png"></td>
+                        <td><img src="IMG/OracleLogo.png"></td>
+                        <td><img src="IMG/SQLServerLogo.png"></td>
+                    </tr>
+                    <tr class="ejemplos_texto">
+                        <td>Sistema de gestión de bases de datos relacional de código abierto y ideal para aplicaciones web.</td>
+                        <td>Sistema de gestión de bases de datos relacional avanzado y de código abierto.</td>
+                        <td>Potente sistema de gestión de bases de datos relacional utilizado en entornos empresariales.</td>
+                        <td>Sistema de gestión de bases de datos relacional de Microsoft, fácil de usar y con capacidades de análisis de datos avanzadas.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- FIN DE SECCION EJEMPLOS -->
+    
+    <!-- SECCION APLICACIONES -->
+    <div class="temas" id="aplicaciones">
+        <h2>Aplicaciones de las Bases de Datos Relacionales</h2>
+        <p>Las bases de datos relacionales son ampliamente utilizadas en múltiples sectores, incluyendo:</p>
+        <div class="imagenes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comercio Electrónico</th>
+                        <th>Bancos y Finanzas</th>
+                        <th>Redes Sociales</th>
+                        <th>Gestión de Recursos Humanos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="IMG/Ecomerce.png"></td>
+                        <td><img src="IMG/Banco.png"></td>
+                        <td><img src="IMG/RedesSociales.png"></td>
+                        <td><img src="IMG/RRHH.png"></td>
+                    </tr>
+                    <tr class="aplicaciones_texto">
+                        <td>Gestión de catálogos de productos, procesamiento de transacciones, control de inventarios y análisis del comportamiento del cliente en línea.</td>
+                        <td>Registro de cuentas bancarias, transacciones financieras, gestión de préstamos y generación de informes para la toma de decisiones estratégicas.</td>
+                        <td>Almacenamiento de perfiles de usuarios, publicaciones, interacciones sociales, gestión de grupos y envío de notificaciones sobre actividades relevantes.</td>
+                        <td>Control de datos de empleados, seguimiento de asistencia, gestión de formación, procesos de contratación y evaluaciones de desempeño laboral.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- FIN DE SECCION APLICACIONES -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Creado por <b>Derlin Romero</b>. Estudiante de Desarrollo de Software.</p>
+        <p>&copy; 2024 - Todos los derechos reservados.</p>
+        <div>
+            <h3>Sobre el Creador</h3>
+            <p>Derlin Romero es estudiante de Desarrollo de Software en la <acronym title="Universidad Tecnológica de Panamá">UTP</acronym>. Este sitio web fue creado con la intención de practicar y reforzar los conocimientos en desarrollo web, siguiendo los principios de usabilidad y buenas prácticas de diseño.</p>
+        </div>
+     </footer>
+    <!-- FIN DE FOOTER -->
+</body>
+</html>
